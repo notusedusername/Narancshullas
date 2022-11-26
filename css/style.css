@@ -1,0 +1,17 @@
+svg path.country:hover, svg path.district:hover {
+    fill: orange;
+}
+
+svg path.country.exhausted, svg path.district.exhausted {
+    fill: #ff6400;
+}
+
+body {
+    color: white;
+    font-family: sans-serif;
+}
+
+#header * {
+    color: white;
+    font-weight: bold;
+}

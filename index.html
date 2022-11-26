@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+<html lang="hu">
+    <head>
+
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="bootstrap/js/bootstrap.min.js" type="application/javascript"></script>
+
+        <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+        <script src="js/svg-loader.min.js" type="application/javascript"></script>
+        <script src="js/district_country_handler.js" type="application/javascript"></script>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body onload="districtCountryHandler.init()">
+        <nav id="header" class="navbar navbar-expand-lg navbar-light bg-primary">
+            <a class="navbar-brand">NARANCSHULLÁS</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-1">
+                    <button type="button" id="reset" class="btn-danger" style="width: 100px; height: 30px; border-radius: 5px">Reset</button>
+                </div>
+                <div class="col-sm-10">
+                </div>
+                <div class="col-sm-1">
+                    <input type="checkbox" id="map-toggle" checked data-toggle="toggle" data-on="Countries" data-off="Districts" data-offstyle="primary" data-style="border" data-width="100">
+                </div>
+            </div>
+            <div class="row">
+                    <svg id="map-districts" style="display: none" data-src="resources/budapest.svg" data-cache="disabled" oniconload="districtCountryHandler.initDistricts(this);"></svg>
+                    <svg id="map-countries" data-src="resources/hungary.svg" data-cache="disabled" oniconload="districtCountryHandler.initCountries(this)"></svg>
+            </div>
+        </div>
+    </body>
+</html>

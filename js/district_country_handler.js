@@ -1,12 +1,14 @@
 function DistrictCountryHandler() {
 
+    const EXHAUSTED_CLASS = "exhausted";
+
     this.init = () => {
         $("#map-toggle").on('change', (e) => {
             $("#map-countries").toggle(1000);
             $("#map-districts").toggle(1000);
         });
         $("#reset").on("click", () => {
-            $("svg path").removeClass("exhausted");
+            $("svg path").removeClass(EXHAUSTED_CLASS);
         });
     }
 
@@ -26,10 +28,10 @@ function DistrictCountryHandler() {
         for(element of eventTargets) {
             $(element).on("click", (e) => {
                 let target = $(e.target);
-                if(target.hasClass("exhausted")) {
-                    target.removeClass("exhausted");
+                if(target.hasClass(EXHAUSTED_CLASS)) {
+                    target.removeClass(EXHAUSTED_CLASS);
                 } else {
-                    target.addClass("exhausted");
+                    target.addClass(EXHAUSTED_CLASS);
                 }
             });
         }
